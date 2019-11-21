@@ -1,0 +1,25 @@
+{
+  "name": "debugger",
+  "version": "1.0.0",
+  "description": "Debugger for simple and more advanced project.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michalstol/debugger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michalstol/debugger/issues"
+  },
+  "homepage": "https://github.com/michalstol/debugger#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
