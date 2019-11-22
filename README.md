@@ -70,3 +70,9 @@ Functions are only visible if the debug mode is on.
 
 ### Events
 It's a list of events available to launch only when the debug mode is on.
+
+## Adjustment or/and extend
+There are two ways to make the adjustment/extend for this library. 
+
+* Change settings - only for a small adjustment
+* Extend other class - for a big adjustment and extend
