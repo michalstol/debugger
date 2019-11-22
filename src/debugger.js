@@ -78,9 +78,7 @@ export default class Debugger {
             if (Object.keys(registeredEvents).length > 0) {
                 const events = [];
 
-                for (let reg in registeredEvents) {
-                    events.push(`${reg} -> ${registeredEvents[reg].desc}`);
-                }
+                for (let reg in registeredEvents) events.push(`${reg} -> ${registeredEvents[reg].desc}`);
 
                 this.printHelpGroup('@AVAILABLE EVENTS:', events);
             }
