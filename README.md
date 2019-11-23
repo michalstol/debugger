@@ -41,7 +41,9 @@ const defaultSettings = {
     colorize: true,
     font: '#fff',
     bg: '#03a9fc',
-    label: '@DEBUG:'
+    label: '@DEBUG:',
+    columns: 12,
+    gridID: 'debug-grid'
 };
 ```
 
@@ -64,6 +66,7 @@ Functions are only visible if the debug mode is on.
 
 * `window.debug.help()` - this method print information about the debug methods
 * `window.debug.msg('foo')` - this method print message or group of messages. It's useful for print information about initialized some classes, launched complicated functions or other important messages.
+* `window.debug.grid(noCOlumns)` - method to create grid layout with default 12 columns. It helps with adjust blocks to layout.
 * `window.debug.addEvent(name, desc, callback)` - method to register important functions for debugging.
 * `window.debug.updateEvent(name, desc, callback)` - method to update registered event.
 * `window.debug.launchEvent(name)` - method to launch callback function from the registered event.
