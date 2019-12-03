@@ -143,21 +143,25 @@ export default class Debugger {
         const {gridID} = this.settings;
 
         if (this.flag && columns && typeof columns === 'number' && gridID && typeof gridID === 'string' && gridID !== '') {
-            const htmlString = `
-                <div id="${gridID}">
-                    <div class="container">
-                        <div class="row">
-                            ${this.gridColumns(columns)}
-                        </div>
-                    </div>
-
-                    ${this.gridStyle(gridID)}
-                </div>
-            `;
-
+            const htmlString = this.createGridHTML(gridID, columns);
             this.removeGrid(gridID);
+            
             document.body.appendChild((new DOMParser().parseFromString(htmlString, 'text/html')).getElementById(gridID));
         }
+    }
+
+    createGridHTML(id, numb) {
+        return `
+            <div id="${id}">
+                <div class="container">
+                    <div class="row">
+                        ${this.gridColumns(numb)}
+                    </div>
+                </div>
+
+                ${this.gridStyle(id)}
+            </div>
+        `;
     }
 
     removeGrid(id) {
