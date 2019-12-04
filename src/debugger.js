@@ -2,12 +2,13 @@ let singleton = false;
 
 const registeredEvents = {};
 const defaultSettings = {
+    label: '@DEBUG:',
     colorize: true, // colorize logs
     font: '#fff',
     bg: '#03a9fc',
-    label: '@DEBUG:',
-    columns: 12,
-    gridID: 'debug-grid'
+    gridID: 'debug-grid',
+    maxColumns: 12,
+    defaultColumns: 12
 };
 
 export default class Debugger {
@@ -139,14 +140,21 @@ export default class Debugger {
     }
 
     // GRID METHODS
-    grid(columns = this.settings.columns) {
-        const {gridID} = this.settings;
+    grid(columns = this.settings.defaultColumns) {
+        const {gridID, maxColumns} = this.settings;
+        const checkGridID = gridID && typeof gridID === 'string' && gridID !== '';
 
-        if (this.flag && columns && typeof columns === 'number' && gridID && typeof gridID === 'string' && gridID !== '') {
+        if (this.flag && columns && typeof columns === 'number' && maxColumns >= columns && checkGridID) {
             const htmlString = this.createGridHTML(gridID, columns);
             this.removeGrid(gridID);
             
             document.body.appendChild((new DOMParser().parseFromString(htmlString, 'text/html')).getElementById(gridID));
+
+            if (document.body.querySelectorAll(`#${gridID} *[class*=col]`).length > 0) {
+                this.debug.msg(`The grid has been added`);
+            }
+        } else if (checkGridID) {
+            this.removeGrid(gridID);
         }
     }
 
@@ -170,15 +178,19 @@ export default class Debugger {
         $html ? document.body.removeChild($html) : false;
     }
 
-    gridColumns(columns) {
-        const htmlArray = [];
+    gridColumns(numb) {
+        const size = this.settings.maxColumns / numb;
+        let html = '';
 
-        for (let i = 1; i <= columns; i++) htmlArray.push('<div class="col-xs"></div>');
+        while (numb > 0) {
+            html += `<div class="col-xs-${size}"></div>`;
+            numb--;
+        }
 
-        return htmlArray.join('');
+        return html;
     }
 
-    gridStyle(id = '') {
+    gridStyle(id) {
         return `
         <style>
             #${id} {

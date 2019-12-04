@@ -1,3 +1,13 @@
 import Debugger from './debugger';
 
-new Debugger(true);
+class ExtendedClass extends Debugger {
+    constructor(flag) {
+        super(flag);
+
+        console.log('class is extended');
+    }
+}
+
+// new Debugger(true);
+
+new ExtendedClass(true);
