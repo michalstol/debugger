@@ -2,7 +2,7 @@
   "name": "debugger",
   "version": "1.0.0",
   "description": "Debugger for simple and more advanced project.",
-  "main": "index.js",
+  "main": "src/debugger.js",
   "scripts": {
     "dev": "webpack --mode development"
   },
