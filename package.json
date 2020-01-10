@@ -1,5 +1,5 @@
 {
-  "name": "debugger",
+  "name": "debugger-for-dev",
   "version": "1.0.0",
   "description": "Debugger for simple and more advanced project.",
   "main": "src/debugger.js",
@@ -10,8 +10,15 @@
     "type": "git",
     "url": "git+https://github.com/michalstol/debugger.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "debug",
+    "debugger",
+    "es6",
+    "help",
+    "simple",
+    "easy"
+  ],
+  "author": "Michal Stolarski",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/michalstol/debugger/issues"

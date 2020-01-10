@@ -16,7 +16,7 @@ export default class Debugger {
         if (!singleton) {
             singleton = true;
 
-            this.settings = {...defaultSettings, ...userSettings};
+            this.settings = Object.assign(defaultSettings, userSettings);
             this.flag = flag;
             this.help = {
                 vars: [],

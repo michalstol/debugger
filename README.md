@@ -7,7 +7,7 @@ It's really simple. Library register themself to the window object and is availa
 ## Import
 
 ```javascript
-import Debugger from 'debugger';
+import Debugger from 'debugger-for-dev';
 ```
 
 ## Initialize
