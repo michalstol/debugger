@@ -1,6 +1,6 @@
 {
   "name": "debugger-for-dev",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Debugger for simple and more advanced project.",
   "main": "src/debugger.js",
   "scripts": {
